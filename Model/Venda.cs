@@ -1,30 +1,22 @@
 namespace ecommerceLojaRoupas.Model;
 
-// Classe Item venda
 class Venda
 {
-    private int id;
-    private Cliente cliente;
-    private List<ItemVenda> itensVenda = new List<ItemVenda>();
-
-    public Venda(int id, Cliente cliente)
+    public int VendaID;
+    public Cliente? Cliente;
+    public List<VendaProduto>? Produtos;
+    public decimal TotalCompra
     {
-        this.id = id;
-        this.cliente = cliente;
-    }
-
-    public int Id { get => id; set => id = value; }
-    public Cliente Cliente { get => cliente; set => cliente = value; }
-    public Produto produto { get => produto; set => produto = value; }
-    public List<ItemVenda> ItensVenda { get => itensVenda; set => itensVenda = value; }
-
-    public decimal CalcularValorTotal()
-    {
-        decimal valorTotal = 0;
-        foreach (ItemVenda item in itensVenda)
+        get
         {
-            valorTotal += item.CalcularSubtotal();
+            try
+            {
+                return Produtos!.Sum(p => p._subtotal);
+            }
+            catch (NullReferenceException nrfe)
+            {
+                throw new Exception($"Nota sem venda: {nrfe.Message}");
+            }
         }
-        return valorTotal;
     }
 }
