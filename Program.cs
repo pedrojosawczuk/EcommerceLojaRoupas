@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Runtime.InteropServices;
+using Classes;
+using enumerador;
+using funcoes;
 
 namespace Projeto_loja_Virtual
 {
@@ -9,7 +12,7 @@ namespace Projeto_loja_Virtual
         static List<Produto> listaProdutos = new List<Produto>();
         static List<CategoriaProduto> listaCategorias = new List<CategoriaProduto>();
         static List<Cliente> listaClientes = new List<Cliente>();
-        static List<Venda> listaVendas = new List<Venda>();
+        static List<ItemVenda> listaVendas = new List<ItemVenda>();
 
         static void Main(string[] args)
         {
@@ -18,42 +21,38 @@ namespace Projeto_loja_Virtual
             {
                 Console.Clear();
                 Console.WriteLine("Escolha uma opção:");
-                Console.WriteLine("1 - Cadastrar Categoria");
-                Console.WriteLine("2 - Listar Categorias");
-                Console.WriteLine("3 - Cadastrar Produto");
-                Console.WriteLine("4 - Listar Produtos");
-                Console.WriteLine("5 - Cadastrar Cliente");
-                Console.WriteLine("6 - Listar Clientes");
-                Console.WriteLine("7 - Registrar Venda");
-                Console.WriteLine("8 - Listar Vendas");
+                Console.WriteLine("1 - Listar Categorias");
+                Console.WriteLine("2 - Cadastrar Produto");
+                Console.WriteLine("3 - Listar Produtos");
+                Console.WriteLine("4 - Cadastrar Cliente");
+                Console.WriteLine("5 - Listar Clientes");
+                Console.WriteLine("6 - Registrar Venda");
+                Console.WriteLine("7 - Listar Vendas");
                 Console.WriteLine("0 - Sair");
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
                 {
                     case 1:
-                        .CadastrarCategoria(listaCategorias);
+                        CategoriaUI.ListarCategorias(listaCategorias);
                         break;
                     case 2:
-                        .ListarCategorias(listaCategorias);
+                        ProdutoUI.CadastrarProduto(listaProdutos, listaCategorias);
                         break;
                     case 3:
-                        .CadastrarProduto(listaProdutos, listaCategorias);
+                        ProdutoUI.ListarProdutos(listaProdutos);
                         break;
                     case 4:
-                        .ListarProdutos(listaProdutos);
+                        ClienteUI.CadastrarCliente(listaClientes);
                         break;
                     case 5:
-                        .CadastrarCliente(listaClientes);
+                        ClienteUI.ListarClientes(listaClientes);
                         break;
                     case 6:
-                        .ListarClientes(listaClientes);
+                        VendaUI.CadastrarVenda(listaVendas, listaClientes, listaProdutos);
                         break;
                     case 7:
-                        .CadastrarVenda(listaVendas, listaClientes, listaProdutos);
-                        break;
-                    case 8:
-                        .ListarVenda(listaVendas);
+                        VendaUI.ListarVenda(listaVendas);
                         break;
                     case 0:
                         Console.WriteLine("Programa encerrado.");
@@ -62,8 +61,7 @@ namespace Projeto_loja_Virtual
                         Console.WriteLine("Opção inválida. Digite novamente.");
                         break;
                 }
-
-
+                TipoRoupa tipo = TipoRoupa.Camisa;
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
 
@@ -71,3 +69,4 @@ namespace Projeto_loja_Virtual
         }
     }
 }
+
