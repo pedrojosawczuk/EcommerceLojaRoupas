@@ -32,7 +32,7 @@ class ClienteUI
 
         foreach (Cliente cliente in listaClientes)
         {
-            Console.WriteLine("ID: " + cliente.Id);
+            Console.WriteLine("ID: " + cliente.ClienteID);
             Console.WriteLine("Nome: " + cliente.Nome);
             Console.WriteLine("E-mail: " + cliente.Email);
             Console.WriteLine("--------------------------");
