@@ -1,15 +1,13 @@
-namespace ecommerceLojaRoupas.Model;
+namespace EcommerceLojaRoupas.Enums;
 
-public class Categoria
+public enum CategoriaEnum
 {
-    public enum CategoriaProduto
-    {
-        Camisa,
-        Calca,
-        Blusa,
-        Saia,
-        Bolsa,
-        Sapato,
-        Colar
-    }
+    Acessorios,
+    Blusas,
+    Bolsas,
+    Calcados,
+    Calcas,
+    Camisas,
+    Colares,
+    Saias
 }
