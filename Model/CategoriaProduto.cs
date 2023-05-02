@@ -1,12 +1,15 @@
 namespace ecommerceLojaRoupas.Model;
 
-public enum CategoriaProduto
+public class Categoria
 {
-    Camisa,
-    Calca,
-    Blusa,
-    Saia,
-    Bolsa,
-    Sapato,
-    Colar
+    public enum CategoriaProduto
+    {
+        Camisa,
+        Calca,
+        Blusa,
+        Saia,
+        Bolsa,
+        Sapato,
+        Colar
+    }
 }
