@@ -1,18 +1,8 @@
 namespace ecommerceLojaRoupas.Model;
 
-public enum CategoriaProduto
-{
-    Camisa,
-    Calca,
-    Blusa,
-    Saia,
-    Bolsa,
-    Sapato,
-    Colar
-}
-
 public class Produto
 {
+    public long ProdutoID;
     public string? Nome { get; set; }
     public string? Descricao { get; set; }
     public decimal Preco { get; set; }
@@ -47,11 +37,11 @@ public class Acessorios : Produto
 
 public class Bolsa : Acessorios
 {
-
+    public string? Material { get; set; }
 }
 
 public class Sapato : Acessorios
 {
-
+    public string? Tipo { get; set; }
 }
 
