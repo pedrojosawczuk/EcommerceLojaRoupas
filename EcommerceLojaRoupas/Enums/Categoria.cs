@@ -1,4 +1,4 @@
-namespace EcommerceLojaRoupas.Enums;
+namespace EcommerceLojaRoupas.Models.Enums;
 
 public enum CategoriaEnum
 {

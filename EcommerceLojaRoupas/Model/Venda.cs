@@ -1,10 +1,12 @@
-namespace ecommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Models.Enums;
 
-class Venda
+namespace EcommerceLojaRoupas.Models;
+
+class VendaModel
 {
     public int VendaID;
-    public Cliente? Cliente;
-    public List<VendaProduto>? Produtos;
+    public ClienteModel? Cliente;
+    public List<VendaProdutoModel>? Produtos;
     public decimal TotalCompra
     {
         get

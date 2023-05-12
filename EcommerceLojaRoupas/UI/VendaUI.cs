@@ -1,6 +1,6 @@
-using ecommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Model;
 
-namespace ecommerceLojaRoupas.UI;
+namespace EcommerceLojaRoupas.UI;
 
 // Criar Venda e listar Vendas
 class VendaUI

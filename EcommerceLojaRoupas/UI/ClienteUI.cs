@@ -1,6 +1,6 @@
-using ecommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Model;
 
-namespace ecommerceLojaRoupas.UI;
+namespace EcommerceLojaRoupas.UI;
 
 //criar Clientes e Listar Clientes
 class ClienteUI

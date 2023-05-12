@@ -1,9 +1,9 @@
-namespace ecommerceLojaRoupas.Model;
+namespace EcommerceLojaRoupas.Models;
 
-public class VendaProduto
+public class VendaProdutoModel
 {
     public int VendaProdutoID;
-    public Produto? _produto;
+    public ProdutoModel? _produto;
     public decimal _quantidade;
     public decimal _precoUnitario;
 

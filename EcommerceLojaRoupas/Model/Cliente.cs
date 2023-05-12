@@ -1,18 +1,47 @@
-namespace ecommerceLojaRoupas.Model;
+namespace EcommerceLojaRoupas.Models;
 
-class Cliente
+public class ClienteModel
 {
     public long ClienteID;
-    public string Nome = string.Empty;
-    //public string Sobrenome = string.Empty;
-    public string Email = string.Empty;
-    //public string Telefone = string.Empty;
-    //public string Endereco = string.Empty;
+    private string _nome;
+    private string _sobrenome;
+    private string _endereco;
+    private string _telefone;
 
-    public Cliente(long id, string nome, string email)
+    public ClienteModel(long clienteID, string nome, string sobrenome, string endereco, string telefone)
     {
-        ClienteID = id;
-        Nome = nome;
-        Email = email;
+        ClienteID = clienteID;
+        _nome = nome;
+        _sobrenome = sobrenome;
+        _endereco = endereco;
+        _telefone = telefone;
+    }
+
+    public string Nome
+    {
+        get { return _nome; }
+        set { _nome = value; }
+    }
+    public string Sobrenome
+    {
+        get { return _sobrenome; }
+        set { _sobrenome = value; }
+    }
+    public string Endereco
+    {
+        get { return _endereco; }
+        set { _endereco = value; }
+    }
+    public string Telefone
+    {
+        get { return _telefone; }
+        set { _telefone = value; }
+    }
+    public string NomeCompleto
+    {
+        get
+        {
+            return $"{Nome} {Sobrenome}";
+        }
     }
 }

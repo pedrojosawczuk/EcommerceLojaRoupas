@@ -1,36 +1,36 @@
-using ecommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Model;
 
-namespace ecommerceLojaRoupas.UI;
+namespace EcommerceLojaRoupas.UI;
 
 // Criar Produtos e listar produtos
 class ProdutoUI
 {
-    public static void CadastrarProduto(List<Produto> listaProdutos, List<CategoriaProduto> listaCategorias)
+    public static void CadastrarProduto(List<Produto> listaProdutos, List<Categoria> listaCategorias)
     {
         Console.Clear();
         Console.WriteLine("CADASTRO DE PRODUTO\n");
 
         Console.Write("Nome do produto: ");
-        string nome = Console.ReadLine();
+        string nome = Console.ReadLine() ?? "";
 
         Console.Write("Descrição do produto: ");
-        string descricao = Console.ReadLine();
+        string descricao = Console.ReadLine() ?? "";
 
         Console.Write("Preço do produto: ");
-        decimal preco = decimal.Parse(Console.ReadLine());
+        decimal preco = decimal.Parse(Console.ReadLine() ?? "");
 
         Console.WriteLine("\nSelecione a categoria do produto:");
 
         CategoriaUI.ListarCategorias(listaCategorias);
 
         Console.Write("Digite o ID da categoria: ");
-        int idCategoria = int.Parse(Console.ReadLine());
+        int idCategoria = int.Parse(Console.ReadLine() ?? "");
 
-        Categoria categoria = listaCategorias.Find(c => c.Id == idCategoria);
+        Produto categoria = listaCategorias.Find(c => c.Id == idCategoria);
 
         int id = listaProdutos.Count + 1;
 
-        Produto produto = new Produto(id, nome, descricao, categoria, preco);
+        CategoriaEnum produto = new Produto(id, nome, descricao, categoria, preco);
 
         listaProdutos.Add(produto);
 
@@ -44,11 +44,11 @@ class ProdutoUI
 
         foreach (Produto produto in listaProdutos)
         {
-            Console.WriteLine("ID: " + produto.Id);
+            Console.WriteLine("ID: " + produto.ProdutoID);
             Console.WriteLine("Nome: " + produto.Nome);
             Console.WriteLine("Descrição: " + produto.Descricao);
             Console.WriteLine("Preço: " + produto.Preco.ToString("C2"));
-            Console.WriteLine("Categoria: " + produto.Categoria.Nome);
+            Console.WriteLine("Categoria: " + produto.Categoria.ToString());
             Console.WriteLine("--------------------------");
         }
     }
