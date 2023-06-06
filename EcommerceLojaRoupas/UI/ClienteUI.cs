@@ -1,11 +1,11 @@
-using EcommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Models;
 
 namespace EcommerceLojaRoupas.UI;
 
 //criar Clientes e Listar Clientes
 class ClienteUI
 {
-    public static void CadastrarCliente(List<Cliente> listaClientes)
+    public static void CadastrarCliente(List<ClienteModel> listaClientes)
     {
         Console.Clear();
         Console.WriteLine("CADASTRO DE CLIENTE\n");
@@ -13,28 +13,34 @@ class ClienteUI
         Console.Write("Nome do cliente: ");
         string nome = Console.ReadLine() ?? "";
 
-        Console.Write("E-mail do cliente: ");
-        string email = Console.ReadLine() ?? "";
+        Console.Write("Sobrenome do cliente: ");
+        string sobreNome = Console.ReadLine() ?? "";
+
+        Console.Write("Endereco do cliente: ");
+        string endereco = Console.ReadLine() ?? "";
+
+        Console.Write("Telefone do cliente: ");
+        string telefone = Console.ReadLine() ?? "";
 
         int id = listaClientes.Count + 1;
 
-        Cliente cliente = new Cliente(id, nome, email);
+        ClienteModel cliente = new ClienteModel(id, nome, sobreNome, endereco, telefone);
 
         listaClientes.Add(cliente);
 
         Console.WriteLine("\nCliente cadastrado com sucesso!");
     }
 
-    public static void ListarClientes(List<Cliente> listaClientes)
+    public static void ListarClientes(List<ClienteModel> listaClientes)
     {
         Console.Clear();
         Console.WriteLine("LISTAGEM DE CLIENTES\n");
 
-        foreach (Cliente cliente in listaClientes)
+        foreach (ClienteModel cliente in listaClientes)
         {
             Console.WriteLine("ID: " + cliente.ClienteID);
-            Console.WriteLine("Nome: " + cliente.Nome);
-            Console.WriteLine("E-mail: " + cliente.Email);
+            Console.WriteLine("Nome: " + cliente.NomeCompleto);
+            Console.WriteLine("E-mail: " + cliente.Telefone);
             Console.WriteLine("--------------------------");
         }
     }

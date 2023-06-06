@@ -1,21 +1,19 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Runtime.InteropServices;
-using EcommerceLojaRoupas.Model;
+﻿using EcommerceLojaRoupas.Models.Enums;
+using EcommerceLojaRoupas.Models;
 using EcommerceLojaRoupas.UI;
-using EcommerceLojaRoupas.Dados;
+//using EcommerceLojaRoupas.Dados;
 
 namespace EcommerceLojaRoupas;
 
 class Program
 {
-    static List<Produto> listaProdutos = new List<Produto>();
-    static List<CategoriaEnum> listaCategorias = new List<CategoriaEnum>();
-    static List<Cliente> listaClientes = new List<Cliente>();
-    static List<Venda> listaVendas = new List<Venda>();
+    private List<ProdutoModel> listaProdutos = new List<ProdutoModel>();
+    private List<CategoriaEnum> listaCategorias = new List<CategoriaEnum>();
+    private List<ClienteModel> listaClientes = new List<ClienteModel>();
+    private List<VendaModel> listaVendas = new List<VendaModel>();
 
-    new BaseDeDados(estoque).PopularBaseDeDados();
-    static void Main(string[] args)
+    //new BaseDeDados(estoque).PopularBaseDeDados();
+    void Main(string[] args)
     {
         int opcao = 0;
         do
@@ -30,7 +28,7 @@ class Program
             Console.WriteLine("6 - Registrar Venda");
             Console.WriteLine("7 - Listar Vendas");
             Console.WriteLine("0 - Sair");
-            opcao = int.Parse(Console.ReadLine());
+            opcao = int.Parse(Console.ReadLine() ?? "0");
 
             switch (opcao)
             {

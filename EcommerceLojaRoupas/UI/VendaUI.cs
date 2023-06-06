@@ -1,11 +1,11 @@
-using EcommerceLojaRoupas.Model;
+using EcommerceLojaRoupas.Models;
 
 namespace EcommerceLojaRoupas.UI;
 
 // Criar Venda e listar Vendas
 class VendaUI
 {
-    public static void CadastrarVenda(List<Venda> listavendas, List<Cliente> listaClientes, List<Produto> listaProdutos)
+    public static void CadastrarVenda(List<VendaModel> listavendas, List<ClienteModel> listaClientes, List<ProdutoModel> listaProdutos)
     {
         Console.Clear();
         Console.WriteLine("CADASTRO DE Venda\n");

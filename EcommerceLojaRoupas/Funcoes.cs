@@ -1,4 +1,4 @@
-namespace EcommerceLojaRoupas.Model;
+namespace EcommerceLojaRoupas.Models;
 
 public class Principal
 {
